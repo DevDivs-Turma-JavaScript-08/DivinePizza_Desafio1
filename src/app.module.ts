@@ -12,7 +12,7 @@ import { ClienteModule } from './clientes/clientes.module';
     host: 'localhost',
     port:  3306,
     username: 'root',
-    password: '7800',
+    password: 'rootroot',
     database: 'db_divinepizza',
     entities: [Cliente],
     synchronize: true, 

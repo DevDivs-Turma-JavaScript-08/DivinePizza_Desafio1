@@ -20,14 +20,14 @@ export class Cliente {
   email: string;
 
   @IsNotEmpty()
-  @Column({ nullable: false })
-  telefone: number;
+  @Column({ length: 20, nullable: false })
+  ultimoPedido: string;
 
   @IsNotEmpty()
   @Column({ nullable: false })
   quantPedido: number;
 
   @IsNotEmpty()
-  @Column({ nullable: false })
-  ultimoPedido: number;
+  @Column({ length: 20, nullable: false })
+  telefone: string;
 }
