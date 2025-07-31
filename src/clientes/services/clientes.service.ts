@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
-import { Cliente } from "../entities/cliente.entity";
+import { Cliente } from "../entities/clientes.entity";
 import { DeleteResult, ILike, Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 
@@ -7,11 +7,11 @@ import { InjectRepository } from "@nestjs/typeorm";
 
 @Injectable()
 export class ClientesService {
-    contructor(
-        @InjectRepository(Cliente)
-        private clientesRepository: Repository<Cliente>
 
-    ) {}
+    constructor(
+    @InjectRepository(Cliente)
+    private clientesRepository: Repository<Cliente>,
+  ) {}
 
     async findByAll(): Promise<Cliente[]> {
         return this.clientesRepository.find()
@@ -19,7 +19,7 @@ export class ClientesService {
 
     async findById(id: number): Promise<Cliente> {
 
-        const cliente = await this.clientesRepository.findOneBy({
+        const cliente = await this.clientesRepository.findOne({
             where: { id }
         });
         if (!cliente) {
