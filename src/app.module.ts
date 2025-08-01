@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { IS_DIVISIBLE_BY } from 'class-validator';
 import { Cliente } from './clientes/entities/clientes.entity';
 import { ClienteModule } from './clientes/clientes.module';
 
